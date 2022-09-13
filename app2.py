@@ -2,34 +2,27 @@ from typing import Text
 import cv2
 import face_recognition
 import numpy as np
-import os
 import encode.process as enc
 import operations.operations as op
 import imager.img_to_val as img_val
-import time
 import av
-import shutil
 from eye_detect.eye_detection import eyeTracking
 from streamlit_webrtc import webrtc_streamer, WebRtcMode, RTCConfiguration
 
 def app():
 
-    
     def real_time_prediction(image):
 
-        logg=[]
         eye = eyeTracking()
         path = 'dataset/'
         data = op.file_operations()
         __,classNames = img_val.im_val().encoder(path)
         encoded_face_train = enc.tnt().tandt(path)
 
-
         img = image
         eye.refresh(img)
         frame = eye.annotated_frame()
         text = ''
-        #logging = open("logger.txt",'r+')
 
         if eye.is_blinking():
             text = "Blinking"
@@ -60,8 +53,6 @@ def app():
                 cv2.rectangle(frame, (x1,y2-35),(x2,y2), (0,255,0), cv2.FILLED)
                 cv2.putText(frame,name, (x1+6,y2-5), cv2.FONT_HERSHEY_COMPLEX,1,(255,0,0),2)
                 cv2.putText(frame, text, (90, 60), cv2.FONT_HERSHEY_DUPLEX, 1.6, (147, 58, 31), 2)
-            
-            print(logg)
 
         return frame
 
@@ -84,4 +75,3 @@ def app():
         async_processing=True,
     )
 
-    

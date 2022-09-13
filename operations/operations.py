@@ -1,21 +1,7 @@
-import os
-import shutil
 from datetime import datetime
 
 class file_operations:
 
-    def add_user(self,file):
-        self.file = file
-        os.mkdir('dataset')
-        shutil.move(self.file,'dataset')
-    
-    def remove(self,path):
-        try:
-            self.path = path
-            shutil.rmtree(self.path)
-        except:
-            return
-    
     def database(self,name):
         with open('log.txt','r+') as f:
             myDataList = f.readlines()
