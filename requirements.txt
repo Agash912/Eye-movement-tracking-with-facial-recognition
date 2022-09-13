@@ -1,0 +1,11 @@
+wheel
+cmake
+dlib
+face_recognition
+opencv-python
+pillow
+numpy
+imutils
+streamlit-webrtc
+watchdog
+fpdf
