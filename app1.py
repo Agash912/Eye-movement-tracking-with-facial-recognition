@@ -6,13 +6,13 @@ import base64
 
 def app():
 
-    st.title("Real-time Proctoring App")
-    st.subheader("This application lets you proctor the test taker by recognizing face and tracking eye balls ")
-    st.text("**** Click Begin Proctoring from sidebar only after you upload image ****")
-
-
-    user_input = st.text_input("Enter your name", 'User')
-    image_file = st.file_uploader("Upload Your Image", type=['jpg', 'png', 'jpeg'])
+    st.title("Face recognition with Eye ball movement detection")
+    st.subheader("This application can be used to authorise a person and also track their motion of eyeballs")
+    st.write("To begin, ")
+    #st.write("1. Enter your name in the below field")
+    user_input = st.text_input("1. Enter your name in the below field", 'Default user')
+    #st.write("2. Upload your photo ")
+    image_file = st.file_uploader("2. Upload your photo ", type=['jpg', 'png', 'jpeg'])
 
     if image_file is not None:
         file_details = {"FileName":user_input,"FileType":image_file.type,"FileSize":image_file.size}

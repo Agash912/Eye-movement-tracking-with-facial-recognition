@@ -4,11 +4,14 @@ import streamlit as st
 
 PAGES = {
     "Home Page": app1,
-    "Begin Proctoring": app2
+    "Detection": app2
 }
 
 st.sidebar.title('Page Contents')
 selection = st.sidebar.radio("Go To :", list(PAGES.keys()))
-st.sidebar.write("Made by Agash Uthayasuriyan")
+url = "https://github.com/Agash912"
+#st.sidebar.write("Find ")
+#st.sidebar.write("Made by[link](%s)" % url)
+st.markdown("Made by [Agash Uthayasuriyan](%s)" % url)
 page = PAGES[selection]
 page.app()
