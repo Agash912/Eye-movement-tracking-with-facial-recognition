@@ -6,13 +6,11 @@ import base64
 
 def app():
 
-    st.title("Face recognition with Eye ball movement detection")
-    st.subheader("This application can be used to authorise a person and also track their motion of eyeballs")
-    st.write("To begin, ")
-    #st.write("1. Enter your name in the below field")
+    st.title("Eye ball movement detection with facial recognition")
+    st.subheader("This application can identify a person and track motion of their eyeballs in real time using feature extraction")
+    st.write("Kindly follow the below instructions: ")
     user_input = st.text_input("1. Enter your name in the below field", 'Default user')
-    #st.write("2. Upload your photo ")
-    image_file = st.file_uploader("2. Upload your photo ", type=['jpg', 'png', 'jpeg'])
+    image_file = st.file_uploader("2. Upload your photo and then navigate to Detect page from sidebar", type=['jpg', 'png', 'jpeg'])
 
     if image_file is not None:
         file_details = {"FileName":user_input,"FileType":image_file.type,"FileSize":image_file.size}
