@@ -5,7 +5,6 @@ import shutil
 def app():
 
     st.title("Eye ball movement detection with facial recognition")
-    st.subheader("This application can identify a person and track motion of their eyeballs in real time using feature extraction")
     st.write("Kindly follow the below instructions: ")
     user_input = st.text_input("1. Enter your name in the below field", 'User')
     image_file = st.file_uploader("2. Upload your photo and then navigate to Detect page from sidebar", type=['jpg', 'png', 'jpeg'])

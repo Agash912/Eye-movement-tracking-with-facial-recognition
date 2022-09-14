@@ -22,7 +22,7 @@ Follow the link in terminal to use the application.
 
 This should be the web page:
 
-![1663159213536](image/README/1663159213536.png)
+![1663159567820](image/README/1663159567820.png)
 
 ## Usage
 
